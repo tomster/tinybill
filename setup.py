@@ -30,7 +30,7 @@ setup(name='tinybill',
       ],
       entry_points="""
       # -*- Entry points: -*-
-[paste.filter_factory]
+[paste.app_factory]
 main = tinybill.main:MainFactory
       """,
       )
