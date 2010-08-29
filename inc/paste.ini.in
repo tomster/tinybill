@@ -1,0 +1,17 @@
+#Set up a http server on the port defined in buildout.cfg 
+[server:main]
+use = egg:Paste#http
+host = ${wsgi-conf:host}
+port = ${wsgi-conf:port}
+
+[pipeline:main]
+pipeline =
+    myfilter
+	app
+
+[filter:myfilter]
+use = egg:tinybill#main
+
+[app:app]
+use = egg:example#entrypoint
+
